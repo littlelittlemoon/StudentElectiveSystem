@@ -1,0 +1,42 @@
+.AddStu_contend_body, .AddTea_contend_body{
+	width: 50%;
+	height: 450px;
+	border:1px solid #E0EEEE;
+	background-color: #FFFFF0;
+	margin: 0px auto;
+}
+
+.content_h2{
+	text-align: center;
+}
+
+.content_p{
+	display: block;
+	margin-left: 85px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.content_table{
+	width: 85%;
+	border: 1px solid #00868B;
+	margin: auto;
+	border-collapse: separate; 
+	border-spacing: 10px;
+}
+
+.txt_box{
+	
+}
+
+.btn{
+	color: #FFFFFF;
+	
+	background-color:#00868B;
+	border: 1px solid #00868B;
+}
+
+.btn:hover{
+	background-color:#28A4C9 ;
+	border: 1px solid #28A4C9;
+}

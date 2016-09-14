@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="StuUser.master.cs" Inherits="Web.StuUser" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon"type="image/x-icon" href="images/logo.ico"media="screen" />
+	<script type="text/javascript" src="js/script.js" ></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+   <div>
+        
+        <div class="header">
+		<div class="header03"></div>
+		<div class="header01"></div>
+		<a class="header02" href="StudentWebIndex.aspx">学生选课系统</a>
+		</div>
+		<div class="left" id="LeftBox">
+			<div class="left01">
+				<div class="left01_right"></div>
+				<div class="left01_left"></div>
+				<div class="left01_c">欢迎您，<asp:Label ID="Lab_StuName" runat="server" Font-Bold="True" ForeColor="#0066FF" Text="Label"></asp:Label>
+                    同学</div>
+			</div>
+			<div class="left02">
+				<div class="left02top">
+					<div class="left02top_right"></div>
+					<div class="left02top_left"></div>
+					<div class="left02top_c">
+						<img src="images/studentsys.png"/> 学生选课系统</div>
+				</div>
+				<div class="left02down">
+					<div class="left02down01">
+						<a href="StuAddCourseList.aspx">
+							<div class="left02down01_img"></div>新增选课</a>
+					</div>
+					<div class="left02down01">
+						<a href="ReturnCourse.aspx">
+							<div class="left02down01_img"></div>退选课程</a>
+					</div>
+                    <div class="left02down01">
+						<a href="HaveCourse.aspx">
+							<div class="left02down01_img"></div>查看已选课程</a>
+					</div>
+				</div>
+			</div>
+
+            <div class="left02">
+				<div class="left02top">
+					<div class="left02top_right"></div>
+					<div class="left02top_left"></div>
+					<div class="left02top_c">
+						<img src="images/studentsys.png"/> 个人管理</div>
+				</div>
+				<div class="left02down">
+					<div class="left02down01">
+						<a href="ModifyStuPass.aspx">
+							<div class="left02down01_img"></div>更改密码</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="left01">
+				<div class="left03_right"></div>
+				<div class="left01_left"></div>
+				<div class="left03_c"><a href="/V_UserLogin.aspx">更改用户登录</a></div>
+			</div>
+		</div>
+		<div class="rrcc" id="RightBox">
+			<div class="center" id="Mobile" onclick="show_menuC()"></div>
+			<div class="right" id="li010">
+                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                 </asp:ContentPlaceHolder>
+			</div>
+		</div> 
+    </div>
+    </form>
+</body>
+</html>

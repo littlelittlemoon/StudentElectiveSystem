@@ -1,0 +1,22 @@
+.Home_contend_body{
+	width: 70%;
+	height: 70%;
+	margin: 50px auto;
+	border:1px solid #E0EEEE;
+	background-color: #FFFFF0;
+}
+
+.content_h2{
+	text-align: center;
+}
+
+.content_p{
+	display: block;
+	margin-left: 10px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.content_end_p{
+	color: #EE5C42;
+}

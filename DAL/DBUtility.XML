@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DBUtility</name>
+    </assembly>
+    <members>
+        <member name="T:DBUtility.sqlHelpers">
+            <summary>
+            <para>功能：SQL数据库基础操作</para>
+            <para>作者：廖德钦</para>
+            <para>时间：2008.6.3</para>
+            <para>最后修改时间：2014.05.05</para>
+            </summary>
+        </member>
+        <member name="F:DBUtility.sqlHelpers._strConnectionString">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
+        <member name="F:DBUtility.sqlHelpers._sqlConn">
+            <summary>
+            SQL数据库连接对象
+            </summary>
+        </member>
+        <member name="F:DBUtility.sqlHelpers._sqlCmd">
+            <summary>
+            SQL数据库操作命令对象
+            </summary>
+        </member>
+        <member name="F:DBUtility.sqlHelpers._sqlDa">
+            <summary>
+            SQL数据库数据适配器对象
+            </summary>
+        </member>
+        <member name="F:DBUtility.sqlHelpers._sqlDr">
+            <summary>
+            SQL数据库阅读器对象
+            </summary>
+        </member>
+        <member name="F:DBUtility.sqlHelpers._strLastError">
+            <summary>
+            最后的错误信息
+            </summary>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="strConnectionStringName">数据库连接字符串的名字</param>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="Server">数据库服务器</param>
+            <param name="UId">登陆数据库服务器的账号</param>
+            <param name="Pwd">登陆数据库服务器的密码</param>
+            <param name="DataBase">当前数据库</param>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.GetLastError">
+            <summary>
+            获取最后的错误信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.ShowMessage(System.String,System.String)">
+            <summary>
+            显示警告消息
+            </summary>
+            <param name="strMsg">消息</param>
+            <param name="strTitle">标题</param>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.GetSqlList">
+            <summary>
+            获取数据库服务器列表
+            </summary>
+            <returns>服务器列表</returns>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.OpenDb">
+            <summary>
+            打开数据库
+            </summary>
+            <returns>
+            <para>打开成功，返回true</para>
+            <para>打开失败，返回false</para>
+            </returns>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.ClosDb">
+            <summary>
+            关闭数据库
+            </summary>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.MakeCommand(System.String,System.Data.CommandType)">
+            <summary>
+            生成不带参数的数据库操作命令
+            </summary>
+            <param name="cmdText">命令文本或存储过程名</param>
+            <param name="cmdType">命令类型</param>
+            <returns>SQL数据库操作命令对象</returns>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.MakeCommand(System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            生成带参数的数据库操作命令对象
+            </summary>
+            <param name="cmdText">命令文本或存储过程名</param>
+            <param name="Sps">SQL参数数组</param>
+            <param name="cmdType">命令类型</param>
+            <returns>SQL数据库操作命令对象</returns>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.ExecuteProcReturnDataTable(System.String)">
+            <summary>
+            <para>执行不带参数的存储过程，返回数据表</para>
+            <para>主要用于数据库的SELECT命令</para>
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>SELECT查询结果集</returns>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.ExecuteProcReturnDataTable(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            <para>执行带参数的存储过程，返回数据表</para>
+            <para>主要用于数据库的SELECT命令</para>
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="Sps">SQL参数数组</param>
+            <returns>SELECT查询结果集</returns>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.ExecuteProcReturnVoid(System.String)">
+            <summary>
+            <para>执行不带参数的存储过程，不返回值</para>
+            <para>一般用于数据的CREATE,INSERT,UPDATE,DELETE命令</para>
+            </summary>
+            <param name="cmdText">存储过程名</param>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.ExecuteProcReturnVoid(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            <para>执行不带参数的存储过程，不返回值</para>
+            <para>一般用于数据的CREATE,INSERT,UPDATE,DELETE命令</para>
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="Sps">SQL参数数组</param>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.ExecuteProcReturnString(System.String)">
+            <summary>
+            <para>执行不带参数的存储过程，返回一个字符串</para>
+            <para>一般用于数据库的SELECT命令，且查询结果一般只含有一行一列</para>
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <returns>SELECT查询结果集的第一行第一列</returns>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.ExecuteProcReturnString(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            <para>执行带参数的存储过程，返回一个字符串</para>
+            <para>一般用于数据库的SELECT命令，且查询结果一般只含有一行一列</para>
+            </summary>
+            <param name="cmdText">存储过程名</param>
+            <param name="Sps">SQL参数数组</param>
+            <returns>SELECT查询结果集的第一行第一列</returns>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.ExecuteTextReturnDataTable(System.String)">
+            <summary>
+            <para>执行不带参数的SQL命令文本，返回查询结果集</para>
+            <para>一般用于SELECT命令</para>
+            </summary>
+            <param name="cmdText">SQL命令文本</param>
+            <returns>SELECT查询结果集</returns>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.ExecuteTextReturnDataTable(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            <para>执行带参数的SQL命令文本，返回查询结果集</para>
+            <para>一般用于SELECT命令</para>
+            </summary>
+            <param name="cmdText">SQL命令文本</param>
+            <param name="Sps">SQL参数数组</param>
+            <returns>SELECT查询结果集</returns>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.ExecuteTextReturnVoid(System.String)">
+            <summary>
+            <para>执行不带参数的SQL命令文本，无返回</para>
+            <para>一般用于CREATE,INSERT,UPDATE,DELETE命令</para>
+            </summary>
+            <param name="cmdText">SQL命令文本</param>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.ExecuteTextReturnVoid(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            <para>执行带参数的SQL命令文本，无返回</para>
+            <para>一般用于CREATE,INSERT,UPDATE,DELETE命令</para>
+            </summary>
+            <param name="cmdText">SQL命令文本</param>
+            <param name="Sps">SQL参数数组</param>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.ExecuteTextReturnString(System.String)">
+            <summary>
+            <para>执行不带参数的SQL命令，返回字符串</para>
+            <para>一般用于SELECT命令</para>
+            </summary>
+            <param name="cmdText">SQL命令文本</param>
+            <returns>查询结果集的第一行第一列</returns>
+        </member>
+        <member name="M:DBUtility.sqlHelpers.ExecuteTextReturnString(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            <para>执行带参数的SQL命令，返回字符串</para>
+            <para>一般用于SELECT命令</para>
+            </summary>
+            <param name="cmdText">SQL命令文本</param>
+            <param name="Sps">SQL参数数组</param>
+            <returns>查询结果集的第一行第一列</returns>
+        </member>
+    </members>
+</doc>
